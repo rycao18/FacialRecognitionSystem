@@ -1,0 +1,39 @@
+html{
+    height: 150px;
+    width: 200px;
+}
+
+body {
+    height: 150px;
+    width: 200px;
+}
+
+.hidden{
+	visibility: collapse;
+}
+
+.cansee{
+	visibility: visible;
+}
+
+#welcome {
+	color: rgb(0, 172, 58);
+	font-size: 18pt;
+	text-align: center;
+	margin: 0px auto;
+}
+
+#cleartoken {
+	position: fixed;
+	bottom: 0;
+	left: 65px;
+}
+
+input {
+	margin: 5px auto;
+	margin-left: 5px;
+}
+
+#submit {
+	margin-left: 70px;
+}
