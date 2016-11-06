@@ -2,15 +2,15 @@
 <html>
   <head>
     <title>Bugfreespork popup</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="extension.css">
     <script src="socket.io-1.4.5.js"></script>
     <script src="jquery-3.1.1.min.js"></script>
     <script src="popup.js"></script>
   </head>
   <body>
-    <div id="status" height = 50px></div>
-    <div id="click"></div>
-    <form id="register-form">
+    <div id="welcome"></div>
+    <button class = "hidden" id="cleartoken">Clear Token</button>
+    <form class = "hidden" id="login-form">
       <input id = "username" type = "text" length = "20" placeholder = "username" autofocus>
       <input id = "password" type = "password" placeholder = "password">
       <input id = "submit" type = "submit">

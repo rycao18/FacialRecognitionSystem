@@ -1,0 +1,11 @@
+div#mygoodcontainer {
+	margin: 10% auto;
+    width: 500px;
+    height: 375px;
+    border: 10px #333 solid;
+}
+#videoElement {
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+}

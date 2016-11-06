@@ -1,0 +1,24 @@
+div#mygoodcontainer {
+    width: 500px;
+    height: 375px;
+    border: 10px #333 solid;
+    float: left;
+    display:inline;
+}
+#videoElement {
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+    display:inline;
+}
+#count {
+	color: rgb(240, 0, 12);
+	font-size: 36pt;
+	display: inline;
+}
+#myCanvas {
+	display:inline;
+	width:500px;
+	height:375px;
+	float:right;
+}

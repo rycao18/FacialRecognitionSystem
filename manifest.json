@@ -2,7 +2,6 @@
   "manifest_version": 2,
 
   "name": "Bug Free Spork",
-  "key": "bkfkppgapognebeofafenmnlnjdgaikh",
   "description": "Face recognition website login",
   "version": "1.0",
   "browser_action": {
@@ -24,7 +23,12 @@
     {
       "matches": ["http://*/*", "https://*/*"],
       "run_at" :"document_end",
-      "js": ["inject.js"]
+      "js": ["tracking/tracking-min.js", "tracking/data/face.js", "socket.io-1.4.5.js", "inject.js"],
+      "css": ["style.css"]
     }
+  ],
+  "web_accessible_resources": [
+    "newscript.js",
+    "newstyle.css"
   ]
 }
