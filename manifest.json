@@ -2,6 +2,7 @@
   "manifest_version": 2,
 
   "name": "Bug Free Spork",
+  "key": "bkfkppgapognebeofafenmnlnjdgaikh",
   "description": "Face recognition website login",
   "version": "1.0",
   "browser_action": {
@@ -14,7 +15,10 @@
   "permissions": [
     "activeTab",
     "https://*.pixelcubed.com/",
-    "https://bugfreespork.tk/"
+    "https://bugfreespork.tk/",
+    "https://cdn.socket.io/",
+    "storage",
+    "identity"
   ],
   "content_scripts": [
     {

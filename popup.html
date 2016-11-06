@@ -1,18 +1,19 @@
 <!doctype html>
-<!--
- This page is shown when the extension button is clicked, because the
- "browser_action" field in manifest.json contains the "default_popup" key with
- value "popup.html".
- -->
 <html>
   <head>
     <title>Bugfreespork popup</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="socket.io-1.4.5.js"></script>
+    <script src="jquery-3.1.1.min.js"></script>
     <script src="popup.js"></script>
-    <link rel = "stylesheet" type = "text/css" href = "style.css">
   </head>
   <body>
-    <div id="status"></div>
-    <div id = "click"></div>
-    <a href = "bugfreespork.tk">Click here to go to our website</a>
+    <div id="status" height = 50px></div>
+    <div id="click"></div>
+    <form id="register-form">
+      <input id = "username" type = "text" length = "20" placeholder = "username" autofocus>
+      <input id = "password" type = "password" placeholder = "password">
+      <input id = "submit" type = "submit">
+    </form>
   </body>
 </html>
