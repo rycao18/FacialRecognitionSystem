@@ -20,6 +20,12 @@
   "permissions": [
     "activeTab",
     "https://*.pixelcubed.com/",
-    "https://bugfreespork.tk/",
-  ]
+    "https://bugfreespork.tk/"
+  ],
+  "content_scripts": [
+    {
+      "run_at" :"document_start",
+      "js": ["inject.js"]
+    }
+  ],
 }
