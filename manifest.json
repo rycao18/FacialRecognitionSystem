@@ -9,7 +9,10 @@
       "background.js"
     ],
     "persistent": true
-  },  
+  },
+  "browser_action": {
+    "default_title": "Inject!"
+  },
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"
