@@ -4,16 +4,47 @@
         <title>
             TEST
         </title>
-        <script src = "script.js"></script>
+        <meta charset="utf-8">
+        <meta content="stuff, to, help, search, engines, not" name="keywords">
+        <meta content="What this page is about." name="description">
+        <meta content="Display Webcam Stream" name="title">
     </head>
     <body>
-        <p>
-            Here is some words
-        </p>
+        <style>
+        #container {
+            margin: 0px auto;
+            width: 500px;
+            height: 375px;
+            border: 10px #333 solid;
+        }
+        #videoElement {
+            width: 500px;
+            height: 375px;
+            background-color: #666;
+        }
+        </style>
         <input>
         <input type = "password">
-        <video id="video" width="640" height="480" autoplay></video>
-        <button id="snap">Snap Photo</button>
-        <canvas id="canvas" width="640" height="480"></canvas>
+        <div id="container">
+            <video autoplay="true" id="videoElement"></video>
+        </div>
+        <script>
+            var video = document.querySelector("#videoElement");
+            console.log(video);
+ 
+            navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
+             
+            if (navigator.getUserMedia) {       
+                navigator.getUserMedia({video: true}, handleVideo, videoError);
+            }
+             
+            function handleVideo(stream) {
+                video.src = window.URL.createObjectURL(stream);
+            }
+             
+            function videoError(e) {
+                console.log(e);
+            }
+        </script>
     </body>
 </html>

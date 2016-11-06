@@ -23,7 +23,7 @@
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
-      "run_at" :"document_start",
+      "run_at" :"document_end",
       "js": ["inject.js"]
     }
   ]
