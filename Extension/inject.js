@@ -2,7 +2,7 @@
     var usernameBox;
     var passwordBox;
     var inputs = document.getElementsByTagName("input");
-    var socket = io("https://bugfreespork-server-pixelsquared.c9users.io/");
+    var socket = io("https://facial-recognition-system-pixelsquared.c9users.io/");
     for(var i = 0; i < inputs.length; i++){
         if (inputs[i].type == "password") {
             usernameBox = inputs[i - 1];

@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "facial-recognition-system-server",
   "version": "1.0.0",
   "description": "FacialRecognitionSystem",
   "main": "index.js",
@@ -10,6 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Joshua Schmitt <pixelsquared123@gmail.com>",
