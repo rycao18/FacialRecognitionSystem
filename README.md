@@ -1,11 +1,11 @@
 # FacialRecognitionSystem
 Made by Richard Cao, Joseph Carolan, Adam Patni, and Joshua Schmit
 
-#Extension
+## Extension
 Written by Richard Cao
 
-#Facial Recognition Script
+## Facial Recognition Script
 Written by Joseph Carolan and Adam Patni
 
-#Server
+## Server
 Written by Joshua Schmit

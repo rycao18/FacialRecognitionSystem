@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "FacialRecognitionSystem",
+  "main": "index.js",
+  "dependencies": {
+    "cradle": "^0.7.1",
+    "password-hash-and-salt": "^0.1.4",
+    "socket.io": "^1.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joshua Schmitt <pixelsquared123@gmail.com>",
+  "license": "MIT"
+}
