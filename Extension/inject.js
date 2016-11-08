@@ -10,6 +10,8 @@
         }
     }
 
+    console.log(chrome);
+    var objects = new tracking.ObjectTracker('face');
     usernameBox.onfocus = function(){
         var html = '<div id="myModal">';
         html += '<div id="mymodal-content">';
@@ -18,14 +20,13 @@
         html += '<canvas id="myCanvas" height = "375px" width = "500px"></canvas>'
         html += '<p id="count"></p>'
         html += '</div>';
-        html += '<link rel = "stylesheet" type = "text/css" href = "chrome-extension://lpcalookodbeanoaobpcgfnnoonbjblo/newstyle.css">';
+        html += '<link rel = "stylesheet" type = "text/css" href = "' + chrome.runtime.getURL("newstyle.css") + '">';
         html += '</div>';
         html += '</div>';
 
         document.getElementsByTagName("BODY")[0].innerHTML += html;
 
         var modal = document.getElementById('myModal');
-
         modal.style.display = "inline";
 
         // When the user clicks anywhere outside of the modal, close it
@@ -36,36 +37,44 @@
         }
         var video = document.querySelector("#videoElement");
         var canvas = document.getElementById('myCanvas');
- 
+
         navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
-         
-        if (navigator.getUserMedia) {       
+
+        if (navigator.getUserMedia) {
             navigator.getUserMedia({video: true}, handleVideo, videoError);
         }
-         
+
         function handleVideo(stream) {
             video.src = window.URL.createObjectURL(stream);
         }
-         
+
         function videoError(e) {
             console.log(e);
         }
-        var myVar = setInterval(function(){ myTimer() }, 1500);
+        var myVar = setInterval(myTimer, 1500);
         var newmyVar = myVar;
         var picArray = [];
 
         function myTimer() {
-            canvas.getContext('2d').drawImage(video, 0, 0);
-            var data = canvas.toDataURL("image/jpeg");
-            picArray.push(data);
-            newmyVar += 1;
-            document.getElementById("count").innerHTML = (myVar + 5 - newmyVar);
-            if (newmyVar == myVar + 5) {
-                clearInterval(myVar)
-                socket.emit('processImage', {data: picArray});
-                modal.style.display = "none";
-            }
+
+          canvas.getContext('2d').drawImage(video, 0, 0);
+          tracking.track('#myCanvas', objects);
+          var data = canvas.toDataURL("image/jpeg");
+          picArray.push(data);
+          newmyVar += 1;
+          document.getElementById("count").innerHTML = (myVar + 5 - newmyVar);
+          if (newmyVar == myVar + 5) {
+            clearInterval(myVar)
+            socket.emit('processImage', {data: picArray});
+            modal.style.display = "none";
+          }
         }
-    };
-})
-();
+      };
+      objects.on('track', function(event) {
+        if (event.data.length === 0) {
+          console.log("No targets were detected in this frame.")
+        } else {
+          console.log(event)
+        }
+      });
+    })();

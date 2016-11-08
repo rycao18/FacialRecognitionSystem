@@ -23,7 +23,7 @@
     {
       "matches": ["http://*/*", "https://*/*"],
       "run_at" :"document_end",
-      "js": ["tracking/tracking-min.js", "tracking/data/face.js", "socket.io-1.4.5.js", "inject.js"],
+      "js": ["tracking/tracking-min.js", "tracking/data/face.js", "tracking/data/eye.js", "tracking/data/mouth.js", "socket.io-1.4.5.js", "inject.js"],
       "css": ["style.css"]
     }
   ],

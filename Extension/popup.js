@@ -1,7 +1,7 @@
 var socket = io("https://bugfreespork-server-pixelsquared.c9users.io/");
 socket.on("news", function(data) {
 	socket.emit("my other event", { my: data});
-	
+
 });
 
 
@@ -43,6 +43,7 @@ $(function() {
 
     	//Disable from further calls
     	$('#login-form').remove();
+			document.getElementById("welcome").innerHTML = "Processing..";
     	e.preventDefault();
   	});
     socket.on('token', function (data) {
